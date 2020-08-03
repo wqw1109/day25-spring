@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+               http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="c1" class="com.wqw.study.Chinese" />
+
+    <bean id="c2" class="com.wqw.study.Chinese">
+        <property name="name" value="csz" />
+        <property name="age" value="18" />
+        <property name="feature" value="高富帅" />
+    </bean>
+
+    <bean id="c3" class="com.wqw.study.Chinese">
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="name" value="wqw"/>
+        <constructor-arg name="feature" value="就很棒"/>
+    </bean>
+
+    <context:annotation-config />
+    <context:component-scan base-package="com.wqw.study.ioc" />
+</beans>
